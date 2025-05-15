@@ -1,0 +1,62 @@
+
+# shell Programs Using Command-Line Arguments
+a) Finding biggest of three numbers
+bash
+CopyEdit
+#!/bin/bash
+# Usage: ./biggest.sh 5 10 3
+a=$1
+b=$2
+c=$3
+
+if (( a > b && a > c )); then
+    echo "$a is the greatest"
+elif (( b > c )); then
+    echo "$b is the greatest"
+else
+    echo "$c is the greatest"
+fi
+b) Reversing a number
+bash
+CopyEdit
+#!/bin/bash
+# Usage: ./reverse.sh 1234
+num=$1
+rev=0
+
+while (( num > 0 ))
+do
+    digit=$((num % 10))
+    rev=$((rev * 10 + digit))
+    num=$((num / 10))
+done
+
+echo "Reversed number is $rev"
+c) Accept a number N and a word and print the word N times
+bash
+CopyEdit
+#!/bin/bash
+# Usage: ./repeatword.sh 5 Hello
+n=$1
+word=$2
+
+for (( i=1; i<=n; i++ ))
+do
+    echo "$word"
+done
+d) Sum of individual digits of a 4-digit number
+bash
+CopyEdit
+#!/bin/bash
+# Usage: ./sumdigits.sh 1234
+num=$1
+sum=0
+
+while (( num > 0 ))
+do
+    digit=$((num % 10))
+    sum=$((sum + digit))
+    num=$((num / 10))
+done
+
+echo "Sum of digits is $sum"
